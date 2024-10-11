@@ -19202,8 +19202,8 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'trxnsxctions' already exists
 2024-04-25 11:36:45 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-04-25 11:36:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
 2024-04-25 11:36:45 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
-2024-10-11 09:07:56 [main] INFO  com.demo.DemoApplication - Starting DemoApplication using Java 1.8.0_402 on MacBooks-MBP.lan with PID 7001 (/Users/macbookpro/Documents/pyramid_spring/pyramid_spring/target/classes started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
-2024-10-11 09:07:56 [main] INFO  com.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-11 09:07:56 [main] INFO  com.demo.PyramidApplication - Starting DemoApplication using Java 1.8.0_402 on MacBooks-MBP.lan with PID 7001 (/Users/macbookpro/Documents/pyramid_spring/pyramid_spring/target/classes started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-11 09:07:56 [main] INFO  com.demo.PyramidApplication - No active profile set, falling back to 1 default profile: "default"
 2024-10-11 09:07:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2024-10-11 09:07:57 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
 2024-10-11 09:07:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8082 (http)
@@ -19273,7 +19273,7 @@ java.sql.SQLNonTransientConnectionException: Could not create connection to data
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.demo.DemoApplication.main(DemoApplication.java:10)
+	at com.demo.PyramidApplication.main(DemoApplication.java:10)
 Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -19356,7 +19356,7 @@ java.sql.SQLNonTransientConnectionException: Could not create connection to data
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.demo.DemoApplication.main(DemoApplication.java:10)
+	at com.demo.PyramidApplication.main(DemoApplication.java:10)
 Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -19441,7 +19441,7 @@ java.sql.SQLNonTransientConnectionException: Could not create connection to data
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.demo.DemoApplication.main(DemoApplication.java:10)
+	at com.demo.PyramidApplication.main(DemoApplication.java:10)
 Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
@@ -19493,7 +19493,7 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
-	at com.demo.DemoApplication.main(DemoApplication.java:10)
+	at com.demo.PyramidApplication.main(DemoApplication.java:10)
 Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
@@ -19571,8 +19571,8 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
 	... 52 common frames omitted
-2024-10-11 09:09:53 [main] INFO  com.demo.DemoApplication - Starting DemoApplication using Java 1.8.0_402 on MacBooks-MBP.lan with PID 7036 (/Users/macbookpro/Documents/pyramid_spring/pyramid_spring/target/classes started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
-2024-10-11 09:09:53 [main] INFO  com.demo.DemoApplication - No active profile set, falling back to 1 default profile: "default"
+2024-10-11 09:09:53 [main] INFO  com.demo.PyramidApplication - Starting DemoApplication using Java 1.8.0_402 on MacBooks-MBP.lan with PID 7036 (/Users/macbookpro/Documents/pyramid_spring/pyramid_spring/target/classes started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-11 09:09:53 [main] INFO  com.demo.PyramidApplication - No active profile set, falling back to 1 default profile: "default"
 2024-10-11 09:09:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2024-10-11 09:09:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
 2024-10-11 09:09:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
