@@ -14,12 +14,31 @@ import java.util.List;
 public class PyramidDescentService {
     static int targetProduct;
     static StringBuilder directions;
+    static int[][] data;
+    public int[][] produceData(){
+        String fileName = "/Users/{username}/Desktop/pyramid_sample_input.txt";
+        int[][] pyramid = readPyramidFromFile(fileName);
 
+        this.data = pyramid;
+
+        return pyramid;
+    }
+    public List<Integer> dataToList(){
+
+        produceData();
+
+        List<Integer> dataList = new ArrayList<>();
+
+        for(int[] num:this.data){
+            for(int n:num){
+                dataList.add(n);
+            }
+        }
+        return dataList;
+    }
     public List<String> descentStart() throws NoPathException {
 
-        String fileName = "/Users/{username}/Desktop/pyramid_sample_input.txt";
-
-        int[][] pyramid = readPyramidFromFile(fileName);
+        int[][] pyramid = produceData();
 
         if (pyramid == null) {
             throw new NoPathException("Error reading the pyramid file");
