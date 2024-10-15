@@ -6,20 +6,46 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PyramidDescentService {
     static int targetProduct;
     static StringBuilder directions;
     static int[][] data;
-    public int[][] produceData(){
-        String fileName = "/Users/{username}/Desktop/pyramid_sample_input.txt";
-        int[][] pyramid = readPyramidFromFile(fileName);
+    private static List<Path> files;
+    private static int fileIndex = 0;
 
+    static {
+        try {
+            // Initialize the list of files from the directory, and stores them.
+            files = Files.list(Paths.get("/Users/{username}/Desktop/pyramidDescentData"))
+                    .filter(Files::isRegularFile)
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Grabs a new file with every run
+    public int[][] produceData() {
+        if (files == null || files.isEmpty()) {
+            throw new IllegalStateException("No files found in directory.");
+        }
+        // Get the current file path
+        Path currentFile = files.get(fileIndex);
+
+        // Read pyramid from file
+        int[][] pyramid = readPyramidFromFile(currentFile.toString());
         this.data = pyramid;
+        // Update index for next call
+        fileIndex = (fileIndex + 1) % files.size();  // Wrap around if at the end
 
         return pyramid;
     }
@@ -95,7 +121,7 @@ public class PyramidDescentService {
 
         return false;
     }
-    private int[][] readPyramidFromFile(String fileName) throws NoPathException{
+     private int[][] readPyramidFromFile(String fileName) throws NoPathException{
         List<int[]> rows = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
