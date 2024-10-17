@@ -19,7 +19,6 @@ public class DemoController {
     @GetMapping (value = "/directions")
     @ResponseBody
     public List<String> directions(){
-        List<String> list = pyramidDescentService.descentStart();
     return pyramidDescentService.descentStart();
     }
     @CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET})
@@ -30,7 +29,9 @@ public class DemoController {
     @CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET})
     @GetMapping ("/data")
     public List<Integer> data(){
-        return pyramidDescentService.dataToList();
+        List<Integer> list = pyramidDescentService.dataToList();
+        pyramidDescentService.descentStart();
+        return list;
     }
 
 }

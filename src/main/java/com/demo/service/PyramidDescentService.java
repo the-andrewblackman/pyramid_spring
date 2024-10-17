@@ -32,13 +32,13 @@ public class PyramidDescentService {
 
     static boolean switcher = true;
 
-    static int[][] pyramidArr;
+    public static int[][] pyramidArr;
 
 
     static {
         try {
             // Initialize the list of files from the directory, and stores them.
-            files = Files.list(Paths.get("/Users/{username}/Desktop/pyramidDescentData"))
+            files = Files.list(Paths.get("/Users/macbookpro/Desktop/pyramidDescentData"))
                     .filter(Files::isRegularFile)
                     .collect(Collectors.toList());
         } catch (IOException e) {
@@ -76,7 +76,7 @@ public class PyramidDescentService {
 
         List<Integer> dataList = new ArrayList<>();
 
-        pyramidArr = listOfFiles.get(this.index);
+        this.pyramidArr = listOfFiles.get(this.index);
         this.target = targetProductList.get(this.index);
 
         if(this.index < listOfFiles.size()-1) {
@@ -85,7 +85,7 @@ public class PyramidDescentService {
             this.index = 0;
         }
 
-        for(int[] singleArray:pyramidArr){
+        for(int[] singleArray:this.pyramidArr){
             for(int num:singleArray){
                 dataList.add(num);
             }
