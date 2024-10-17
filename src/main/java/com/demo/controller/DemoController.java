@@ -16,10 +16,11 @@ public class DemoController {
     PyramidDescentService pyramidDescentService;
 
     @CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET})
-    @GetMapping (value = "/directions", produces="text/plain")
+    @GetMapping (value = "/directions")
     @ResponseBody
-    public String directions(){
-    return pyramidDescentService.descentStart().get(1);
+    public List<String> directions(){
+        List<String> list = pyramidDescentService.descentStart();
+    return pyramidDescentService.descentStart();
     }
     @CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET})
     @GetMapping ("/targets")
