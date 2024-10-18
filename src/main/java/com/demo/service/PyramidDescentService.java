@@ -1,5 +1,6 @@
 package com.demo.service;
 
+import com.demo.entity.PyramidData;
 import com.demo.exception.NoPathException;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +20,6 @@ public class PyramidDescentService {
     static List<Integer> targetProductList = new ArrayList<>();
     static int target;
     static int calculatedTargetProduct;
-    static StringBuilder directions;
-    static StringBuilder calculatedDirections;
     static int[][] data;
     private static List<Path> files;
     private static int fileIndex = 0;
@@ -33,6 +32,8 @@ public class PyramidDescentService {
     static boolean switcher = true;
 
     public static int[][] pyramidArr;
+
+    PyramidData pyramidData = new PyramidData();
 
 
     static {
@@ -101,15 +102,15 @@ public class PyramidDescentService {
         }
 
         List<Integer> path = new ArrayList<>();
-        directions = new StringBuilder();
-        if (!findTargetProductPath(pyramidArr, target, 0, 0, 1, path, directions)) {
+        pyramidData.directions = new StringBuilder();
+        if (!findTargetProductPath(pyramidArr, target, 0, 0, 1, path, pyramidData.directions)) {
             throw new NoPathException("No path found for target product: " + targetProductList.get(this.index-1));
         }
         
         // add answer to list
         List<String> list = new ArrayList<>();
         list.add(Integer.toString(this.calculatedTargetProduct));
-        list.add(this.calculatedDirections.toString());
+        list.add(pyramidData.calculatedDirections.toString());
 
 
         return list;
@@ -122,7 +123,7 @@ public class PyramidDescentService {
         // If at bottom row, check if the product equals the target
         if (row == pyramid.length - 1) {
             if (currentProduct == targetProduct) {
-                this.calculatedDirections = directions;
+                pyramidData.calculatedDirections = directions;
                 this.calculatedTargetProduct = targetProduct;
                 return true;
             } else {
