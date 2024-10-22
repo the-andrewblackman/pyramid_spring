@@ -22,15 +22,10 @@ public class DemoController {
     return pyramidDescentService.descentStart();
     }
     @CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET})
-    @GetMapping ("/targets")
-    public Integer target(){
-        return Integer.parseInt(pyramidDescentService.descentStart().get(0));
-    }
-    @CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET})
     @GetMapping ("/data")
     public List<Integer> data(){
         List<Integer> list = pyramidDescentService.dataToList();
-        pyramidDescentService.descentStart();
+        //pyramidDescentService.descentStart();
         return list;
     }
 

@@ -17,76 +17,62 @@ import java.util.stream.Collectors;
 
 @Service
 public class PyramidDescentService {
-    static List<Integer> targetProductList = new ArrayList<>();
-    static int target;
-    static int calculatedTargetProduct;
-    static int[][] data;
-    private static List<Path> files;
-    private static int fileIndex = 0;
-    static int index = 0;
 
-    static int descentIndex = 0;
-
-    static List<int[][]> listOfFiles = new ArrayList<>();
-
-    static boolean switcher = true;
-
-    public static int[][] pyramidArr;
-
-    PyramidData pyramidData = new PyramidData();
+    static PyramidData pyramidData = new PyramidData();
 
 
     static {
         try {
             // Initialize the list of files from the directory, and stores them.
-            files = Files.list(Paths.get("/Users/macbookpro/Desktop/pyramidDescentData"))
+            pyramidData.files = Files.list(Paths.get("/Users/{username}/Desktop/pyramidDescentData"))
                     .filter(Files::isRegularFile)
                     .collect(Collectors.toList());
         } catch (IOException e) {
             e.printStackTrace();
         }
+        dataToList();
     }
 
     // Grabs a new file with every run
-    public List<int[][]> produceData() {
+    public static List<int[][]> produceData() {
 
         List<int[][]> list = new ArrayList<>();
 
-        while(fileIndex < files.size()) {
-            if (files == null || files.isEmpty()) {
+        while(pyramidData.fileIndex < pyramidData.files.size()) {
+            if (pyramidData.files == null || pyramidData.files.isEmpty()) {
                 throw new IllegalStateException("No files found in directory.");
             }
             // Get the current file path
-            Path currentFile = files.get(fileIndex);
+            Path currentFile = pyramidData.files.get(pyramidData.fileIndex);
 
             // Read pyramid from file
             int[][] pyramid = readPyramidFromFile(currentFile.toString());
             list.add(pyramid);
             // Update index for next call
-            fileIndex++;
+           pyramidData.fileIndex++;
         }
 
         return list;
     }
-    public List<Integer> dataToList(){
+    public static List<Integer> dataToList(){
 
-        if(this.switcher) {
-            this.listOfFiles = produceData();
-            this.switcher = false;
+        if(pyramidData.switcher) {
+            pyramidData.listOfFiles = produceData();
+            pyramidData.switcher = false;
         }
 
         List<Integer> dataList = new ArrayList<>();
 
-        this.pyramidArr = listOfFiles.get(this.index);
-        this.target = targetProductList.get(this.index);
+        pyramidData.pyramidArr = pyramidData.listOfFiles.get(pyramidData.index);
+        pyramidData.target = pyramidData.targetProductList.get(pyramidData.index);
 
-        if(this.index < listOfFiles.size()-1) {
-            this.index++;
+        if(pyramidData.index < pyramidData.listOfFiles.size()-1) {
+           pyramidData.index++;
         }else{
-            this.index = 0;
+            pyramidData.index = 0;
         }
 
-        for(int[] singleArray:this.pyramidArr){
+        for(int[] singleArray:pyramidData.pyramidArr){
             for(int num:singleArray){
                 dataList.add(num);
             }
@@ -96,20 +82,19 @@ public class PyramidDescentService {
         return dataList;
     }
     public List<String> descentStart() throws NoPathException {
-
-        if (pyramidArr == null) {
+        if (pyramidData.pyramidArr == null) {
             throw new NoPathException("Error reading the pyramid file");
         }
 
         List<Integer> path = new ArrayList<>();
         pyramidData.directions = new StringBuilder();
-        if (!findTargetProductPath(pyramidArr, target, 0, 0, 1, path, pyramidData.directions)) {
-            throw new NoPathException("No path found for target product: " + targetProductList.get(this.index-1));
+        if (!findTargetProductPath(pyramidData.pyramidArr, pyramidData.target, 0, 0, 1, path, pyramidData.directions)) {
+            throw new NoPathException("No path found for target product: " + pyramidData.targetProductList.get(pyramidData.index-1));
         }
         
         // add answer to list
         List<String> list = new ArrayList<>();
-        list.add(Integer.toString(this.calculatedTargetProduct));
+        list.add(Integer.toString(pyramidData.calculatedTargetProduct));
         list.add(pyramidData.calculatedDirections.toString());
 
 
@@ -124,7 +109,7 @@ public class PyramidDescentService {
         if (row == pyramid.length - 1) {
             if (currentProduct == targetProduct) {
                 pyramidData.calculatedDirections = directions;
-                this.calculatedTargetProduct = targetProduct;
+                pyramidData.calculatedTargetProduct = targetProduct;
                 return true;
             } else {
                 //Backtrack
@@ -151,7 +136,7 @@ public class PyramidDescentService {
 
         return false;
     }
-     private int[][] readPyramidFromFile(String fileName) throws NoPathException{
+     private static int[][] readPyramidFromFile(String fileName) throws NoPathException{
 
         List<int[]> rows = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -159,7 +144,7 @@ public class PyramidDescentService {
 
             line = br.readLine();
             if (line != null && line.trim().startsWith("Target:")) {
-                targetProductList.add(Integer.parseInt(line.split(":")[1].trim()));
+                pyramidData.targetProductList.add(Integer.parseInt(line.split(":")[1].trim()));
             } else {
                 throw new NoPathException("First line does not start with 'Target:'.");
             }
