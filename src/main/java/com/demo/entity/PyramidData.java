@@ -1,19 +1,27 @@
 package com.demo.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
+@Getter
+@Setter
 public class PyramidData {
-    public StringBuilder directions;
-    public StringBuilder calculatedDirections;
-    public int target;
-    public int calculatedTargetProduct;
-    public int fileIndex = 0;
-    public int index = 0;
-    public boolean switcher = true;
-    public List<Integer> targetProductList = new ArrayList();
-    public List<int[][]> listOfFiles = new ArrayList<>();
-    public List<Path> files;
-    public int[][] pyramidArr;
+    private StringBuilder directions;
+    private StringBuilder calculatedDirections;
+    private int target;
+    private int calculatedTargetProduct;
+    private int fileIndex;
+    private int index;
+    private boolean switcher;
+    private List<Integer> targetProductList;
+    private List<int[][]> listOfFiles;
+    private List<Path> files;
+    private int[][] pyramidArr;
 }
