@@ -1,6 +1,7 @@
 package com.demo.service;
 
 import com.demo.entity.PyramidData;
+import com.demo.entity.PyramidNums;
 import com.demo.exception.NoPathException;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +17,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class PyramidDescentService {
+public class PyramidDescentService implements PyramidDescentServiceImpl {
 
     private static PyramidData pyramidData = new PyramidData(null,null, 0,0,
             0,0,true,new ArrayList<>(),new ArrayList<>(),null,null);
 
     static {
         try {
+
             // Initialize the list of files from the directory, and stores them.
-            pyramidData.setFiles(Files.list(Paths.get("/Users/macbookpro/Desktop/pyramidDescentData"))
+            pyramidData.setFiles(Files.list(Paths.get("/Users/{username}/Desktop/pyramidDescentData"))
                     .filter(Files::isRegularFile)
                     .collect(Collectors.toList()));
         } catch (IOException e) {
@@ -54,13 +56,11 @@ public class PyramidDescentService {
 
         return list;
     }
-    public static List<Integer> dataToList(){
+    public static PyramidNums dataToList(){
         if(pyramidData.isSwitcher()) {
             pyramidData.setListOfFiles(produceData());
             pyramidData.setSwitcher(false);
         }
-
-        List<Integer> dataList = new ArrayList<>();
 
         pyramidData.setPyramidArr(pyramidData.getListOfFiles().get(pyramidData.getIndex()));
         pyramidData.setTarget(pyramidData.getTargetProductList().get(pyramidData.getIndex()));
@@ -71,14 +71,15 @@ public class PyramidDescentService {
             pyramidData.setIndex(0);
         }
 
+        PyramidNums pyramidNums = new PyramidNums();
+
         for(int[] singleArray:pyramidData.getPyramidArr()){
             for(int num:singleArray){
-                dataList.add(num);
+                pyramidNums.addPyramidNums(num);
             }
         }
 
-
-        return dataList;
+        return pyramidNums;
     }
     public List<String> descentStart() throws NoPathException {
         if (pyramidData.getPyramidArr() == null) {
