@@ -1,5 +1,6 @@
 package com.demo.service;
 
+import com.demo.dto.PyramidDTO;
 import com.demo.entity.PyramidData;
 import com.demo.entity.PyramidNums;
 import com.demo.exception.NoPathException;
@@ -18,25 +19,12 @@ import java.util.stream.Collectors;
 
 @Service
 public class PyramidDescentService implements PyramidDescentServiceImpl {
-
-    private static PyramidData pyramidData = new PyramidData(null,null, 0,0,
+    private PyramidNums pyramidNums = new PyramidNums();
+    private PyramidData pyramidData = new PyramidData(null,null, 0,0,
             0,0,true,new ArrayList<>(),new ArrayList<>(),null,null);
 
-    static {
-        try {
-
-            // Initialize the list of files from the directory, and stores them.
-            pyramidData.setFiles(Files.list(Paths.get("/Users/{username}/Desktop/pyramidDescentData"))
-                    .filter(Files::isRegularFile)
-                    .collect(Collectors.toList()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        dataToList();
-    }
-
-    // Grabs a new file with every run
-    public static List<int[][]> produceData() {
+    // Loads files
+    public List<int[][]> produceData() {
 
         List<int[][]> list = new ArrayList<>();
 
@@ -51,13 +39,22 @@ public class PyramidDescentService implements PyramidDescentServiceImpl {
             int[][] pyramid = readPyramidFromFile(currentFile.toString());
             list.add(pyramid);
             // Update index for next call
-           pyramidData.setFileIndex(pyramidData.getFileIndex()+1);
+            pyramidData.setFileIndex(pyramidData.getFileIndex()+1);
         }
 
         return list;
     }
-    public static PyramidNums dataToList(){
+    public PyramidDTO dataToList(){
+
         if(pyramidData.isSwitcher()) {
+            try {
+                // Initialize the list of files from the directory, and stores them.
+                pyramidData.setFiles(Files.list(Paths.get("/Users/user/Desktop/pyramidDescentData"))
+                        .filter(Files::isRegularFile)
+                        .collect(Collectors.toList()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             pyramidData.setListOfFiles(produceData());
             pyramidData.setSwitcher(false);
         }
@@ -66,12 +63,14 @@ public class PyramidDescentService implements PyramidDescentServiceImpl {
         pyramidData.setTarget(pyramidData.getTargetProductList().get(pyramidData.getIndex()));
 
         if(pyramidData.getIndex() < pyramidData.getListOfFiles().size()-1) {
-           pyramidData.setIndex(pyramidData.getIndex()+1);
+            pyramidData.setIndex(pyramidData.getIndex()+1);
         }else{
             pyramidData.setIndex(0);
         }
 
-        PyramidNums pyramidNums = new PyramidNums();
+        if(!pyramidNums.getPyramidNums().isEmpty()){
+            pyramidNums.clearPyramidNums();
+        }
 
         for(int[] singleArray:pyramidData.getPyramidArr()){
             for(int num:singleArray){
@@ -79,7 +78,9 @@ public class PyramidDescentService implements PyramidDescentServiceImpl {
             }
         }
 
-        return pyramidNums;
+        descentStart();
+
+        return new PyramidDTO(pyramidNums.getPyramidNums(), pyramidData.getTarget(), pyramidData.getCalculatedDirections().toString());
     }
     public List<String> descentStart() throws NoPathException {
         if (pyramidData.getPyramidArr() == null) {
@@ -89,12 +90,11 @@ public class PyramidDescentService implements PyramidDescentServiceImpl {
         if (!findTargetProductPath(pyramidData.getPyramidArr(), pyramidData.getTarget(), 0, 0, 1, new ArrayList<>(), new StringBuilder())) {
             throw new NoPathException("No path found for target product: " + pyramidData.getTargetProductList().get(pyramidData.getIndex()-1));
         }
-        
+
         // add answer to list
         List<String> list = new ArrayList<>();
         list.add(Integer.toString(pyramidData.getCalculatedTargetProduct()));
         list.add(pyramidData.getCalculatedDirections().toString());
-
 
         return list;
     }
@@ -134,7 +134,7 @@ public class PyramidDescentService implements PyramidDescentServiceImpl {
 
         return false;
     }
-     private static int[][] readPyramidFromFile(String fileName) throws NoPathException{
+    public int[][] readPyramidFromFile(String fileName) throws NoPathException{
 
         List<int[]> rows = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
