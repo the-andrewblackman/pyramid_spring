@@ -171,7 +171,6 @@ public class PyramidDescentService implements PyramidDescentServiceImpl {
     }
 
     public int maxNumberFiles(){
-        System.out.println(pyramidData.getListOfFiles().size());
         return pyramidData.getListOfFiles().size();
     }
 

@@ -19673,7 +19673,7 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field pyramidDescentService in com.demo.controller.DemoController required a bean of type 'com.demo.service.PyramidDescentService' that could not be found.
+Field pyramidDescentService in com.demo.controller.PyramidController required a bean of type 'com.demo.service.PyramidDescentService' that could not be found.
 
 The injection point has the following annotations:
 	- @org.springframework.beans.factory.annotation.Autowired(required=true)
@@ -19992,7 +19992,7 @@ Caused by: java.lang.IllegalArgumentException: 'script' must not be null or empt
 com.demo.exception.NoPathException: File error. Please reformat and try again.
 	at com.demo.service.PyramidDescentService.readPyramidFromFile(PyramidDescentService.java:103)
 	at com.demo.service.PyramidDescentService.descentStart(PyramidDescentService.java:22)
-	at com.demo.controller.DemoController.directions(DemoController.java:20)
+	at com.demo.controller.PyramidController.directions(DemoController.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

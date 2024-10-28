@@ -26,7 +26,7 @@
 com.demo.exception.NoPathException: File error. Please reformat and try again.
 	at com.demo.service.PyramidDescentService.readPyramidFromFile(PyramidDescentService.java:103)
 	at com.demo.service.PyramidDescentService.descentStart(PyramidDescentService.java:22)
-	at com.demo.controller.DemoController.directions(DemoController.java:20)
+	at com.demo.controller.PyramidController.directions(DemoController.java:20)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -406,7 +406,7 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x16
 2024-10-14 12:47:38 [http-nio-8080-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
 	at com.demo.service.PyramidDescentService.dataToList(PyramidDescentService.java:30)
-	at com.demo.controller.DemoController.data(DemoController.java:31)
+	at com.demo.controller.PyramidController.data(DemoController.java:31)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -487,7 +487,7 @@ java.lang.NullPointerException: null
 2024-10-14 12:58:12 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.demo.exception.NoPathException: No path found for target product: 18] with root cause
 com.demo.exception.NoPathException: No path found for target product: 18
 	at com.demo.service.PyramidDescentService.descentStart(PyramidDescentService.java:51)
-	at com.demo.controller.DemoController.directions(DemoController.java:21)
+	at com.demo.controller.PyramidController.directions(DemoController.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

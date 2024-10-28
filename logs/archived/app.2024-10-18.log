@@ -25,7 +25,7 @@
 2024-10-18 08:43:06 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.demo.exception.NoPathException: Error reading the pyramid file] with root cause
 com.demo.exception.NoPathException: Error reading the pyramid file
 	at com.demo.service.PyramidDescentService.descentStart(PyramidDescentService.java:101)
-	at com.demo.controller.DemoController.directions(DemoController.java:22)
+	at com.demo.controller.PyramidController.directions(DemoController.java:22)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DemoController {
+public class PyramidController {
 
     private final PyramidDescentService pyramidDescentService;
     @Autowired
-    public DemoController(PyramidDescentService pyramidDescentService){
+    public PyramidController(PyramidDescentService pyramidDescentService){
         this.pyramidDescentService = pyramidDescentService;
     }
 
