@@ -18,6 +18,11 @@ public class DemoController {
     }
 
     @CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET})
+    @GetMapping ("/max")
+    public int max(){
+        return pyramidDescentService.maxNumberFiles();
+    }
+    @CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.GET})
     @GetMapping ("/data")
     public PyramidDTO data(){
         return pyramidDescentService.dataToList();
