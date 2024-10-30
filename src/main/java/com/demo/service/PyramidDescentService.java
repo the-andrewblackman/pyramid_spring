@@ -49,7 +49,7 @@ public class PyramidDescentService implements PyramidDescentServiceImpl {
         if(pyramidData.isSwitcher()) {
             try {
                 // Initialize the list of files from the directory, and stores them.
-                pyramidData.setFiles(Files.list(Paths.get("/Users/user/Desktop/pyramidDescentData"))
+                pyramidData.setFiles(Files.list(Paths.get("/Users/macbookpro/Desktop/pyramidDescentData"))
                         .filter(Files::isRegularFile)
                         .collect(Collectors.toList()));
             } catch (IOException e) {

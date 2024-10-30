@@ -13,4 +13,6 @@ public interface PyramidDescentServiceImpl {
     List<String> descentStart() throws NoPathException;
     boolean findTargetProductPath(int[][] pyramid, int targetProduct, int row, int col, long currentProduct, List<Integer> path, StringBuilder directions);
     int[][] readPyramidFromFile(String fileName) throws NoPathException;
-}
+    int maxNumberFiles();
+
+    }
