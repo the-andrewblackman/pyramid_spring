@@ -4,6 +4,7 @@ import com.demo.dto.PyramidDTO;
 import com.demo.entity.PyramidData;
 import com.demo.entity.PyramidNums;
 import com.demo.exception.NoPathException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -20,8 +21,11 @@ import java.util.stream.Collectors;
 @Service
 public class PyramidDescentService implements PyramidDescentServiceImpl {
     private PyramidNums pyramidNums = new PyramidNums();
-    private PyramidData pyramidData = new PyramidData(null,null, 0,0,
-            0,0,true,new ArrayList<>(),new ArrayList<>(),null,null);
+
+    @Autowired
+    private PyramidData pyramidData;
+//    private PyramidData pyramidData = new PyramidData(null,null, 0,0,
+//            0,0,true,new ArrayList<>(),new ArrayList<>(),null,null);
 
     // Loads files
     public List<int[][]> produceData() {

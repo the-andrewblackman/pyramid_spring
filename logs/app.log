@@ -25,3 +25,69 @@
 2024-10-30 09:07:41 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
 2024-10-30 09:07:41 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
 2024-10-30 09:07:41 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 1.022 seconds (JVM running for 9.781)
+2024-10-30 16:32:38 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 33852 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:32:38 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:32:42 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:32:42 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:32:42 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 16:32:42 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.543 seconds (JVM running for 7.804)
+2024-10-30 16:35:18 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 33870 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:35:18 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:35:21 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:35:21 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:35:21 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 16:35:22 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.202 seconds (JVM running for 6.604)
+2024-10-30 16:39:33 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 33905 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:39:33 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:39:36 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:39:36 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 16:39:36 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.771 seconds (JVM running for 8.064)
+2024-10-30 16:40:14 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 33910 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:40:14 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:40:17 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:40:17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:40:17 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 16:40:17 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 3.95 seconds (JVM running for 6.233)
+2024-10-30 16:42:37 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 33938 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:42:37 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:42:40 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:42:40 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:42:40 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 16:42:40 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.283 seconds (JVM running for 6.733)
+2024-10-30 16:44:34 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 33953 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:44:34 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:44:37 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:44:37 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:44:37 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 3 ms
+2024-10-30 16:44:37 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.339 seconds (JVM running for 6.752)
+2024-10-30 16:48:52 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 33987 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:48:52 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:48:55 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:48:55 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:48:55 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 16:48:55 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.551 seconds (JVM running for 6.73)
+2024-10-30 16:50:44 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 33994 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:50:44 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:50:48 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:50:48 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:50:48 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 16:50:48 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.914 seconds (JVM running for 7.323)
+2024-10-30 16:51:23 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 34001 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 16:51:23 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 16:51:26 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 16:51:26 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 16:51:26 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 16:51:26 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.166 seconds (JVM running for 6.604)
+2024-10-30 17:07:30 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 34084 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 17:07:30 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 17:07:33 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 17:07:33 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 17:07:33 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2024-10-30 17:07:33 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 4.137 seconds (JVM running for 7.042)
+2024-10-30 17:12:54 [main] INFO  c.d.s.PyramidDescentServiceTest - Starting PyramidDescentServiceTest using Java 1.8.0_402 on MacBooks-MBP.lan with PID 34130 (started by macbookpro in /Users/macbookpro/Documents/pyramid_spring/pyramid_spring)
+2024-10-30 17:12:55 [main] INFO  c.d.s.PyramidDescentServiceTest - The following 1 profile is active: "test"
+2024-10-30 17:12:58 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-10-30 17:12:58 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-10-30 17:12:58 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-10-30 17:12:58 [main] INFO  c.d.s.PyramidDescentServiceTest - Started PyramidDescentServiceTest in 3.866 seconds (JVM running for 7.143)
